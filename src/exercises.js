@@ -166,11 +166,16 @@ function m22Slugify(texto) {
 }
 
 function m23DiasEntreDatas(data1, data2) {
-
+  const d1 = new Date(data1);
+  const d2 = new Date(data2);
+  const diffTime = Math.abs(d2 - d1);
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 
 function m24AdicionarDias(data, quantidadeDias) {
-
+  const d = new Date(data);
+  d.setDate(d.getDate() + quantidadeDias);
+  return d;
 }
 
 function m25AgruparPorMes(lista) {
