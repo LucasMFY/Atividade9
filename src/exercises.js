@@ -217,27 +217,46 @@ function m27RotacionarArray(lista, quantidade) {
 }
 
 function m28CompactarBooleanos(lista) {
-
+    return lista.filter((item, index) => item !== lista[index - 1]);
 }
 
 function m29SomarPorCategoria(lista) {
-
+    return lista.reduce((acc, item) => {
+        acc[item.categoria] = (acc[item.categoria] || 0) + item.valor;
+        return acc;
+    }, {});
 }
 
 function m30ValidarSenha(senha) {
-
+    if (typeof senha !== 'string') return false;
+    const minLength = senha.length >= 8;
+    const hasUppercase = /[A-Z]/.test(senha);
+    const hasLowercase = /[a-z]/.test(senha);
+    const hasNumber = /\d/.test(senha);
+    
+    return minLength && hasUppercase && hasLowercase && hasNumber;
 }
 
 function m31ChunkArray(lista, tamanho) {
-
+    if (tamanho <= 0) return [];
+    const resultado = [];
+    for (let i = 0; i < lista.length; i += tamanho) {
+        resultado.push(lista.slice(i, i + tamanho));
+    }
+    return resultado;
 }
 
 function m32ZipArrays(lista1, lista2) {
-
+    const maxLength = Math.max(lista1.length, lista2.length);
+    const resultado = [];
+    for (let i = 0; i < maxLength; i++) {
+        resultado.push([lista1[i], lista2[i]]);
+    }
+    return resultado;
 }
 
 function m33RemoverFalsy(lista) {
-
+    return lista.filter(Boolean);
 }
 
 module.exports = {
