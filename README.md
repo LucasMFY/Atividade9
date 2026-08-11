@@ -22,5 +22,5 @@ npm test
 npm run test:medium
 ```
 
-Rafael Maciel Bertani
-Lucas Figueiredo Ybarra
+- Rafael Maciel Bertani
+- Lucas Figueiredo Ybarra
