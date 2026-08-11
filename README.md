@@ -21,3 +21,8 @@ npm test
 ```bash
 npm run test:medium
 ```
+
+Integrantes:
+
+- Rafael Maciel Bertani
+- Lucas Figueiredo Ybarra
