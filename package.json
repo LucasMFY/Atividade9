@@ -1,0 +1,24 @@
+{
+  "name": "treinojs-tdd",
+  "version": "1.0.0",
+  "description": "Ambiente de TDD com 100 exercicios de JavaScript.",
+  "main": "src/exercises.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:basic": "jest --testNamePattern=\"basico\"",
+    "test:medium": "jest --testNamePattern=\"medio\"",
+    "test:advanced": "jest --testNamePattern=\"avancado\""
+  },
+  "keywords": [
+    "javascript",
+    "tdd",
+    "jest",
+    "exercicios"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}

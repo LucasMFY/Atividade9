@@ -1,0 +1,37 @@
+const ex = require("../src/exercises");
+
+describe("33 exercicios medios", () => {
+  test("medio 01 - m01FizzBuzz: retorna fizz/buzz/fizzbuzz ou numero", () => expect(ex.m01FizzBuzz(15)).toBe("fizzbuzz"));
+  test("medio 02 - m02Fatorial: calcula fatorial", () => expect(ex.m02Fatorial(5)).toBe(120));
+  test("medio 03 - m03EhPrimo: verifica primo", () => expect(ex.m03EhPrimo(29)).toBe(true));
+  test("medio 04 - m04OrdenarNumeros: ordena crescente sem mutar original", () => { const nums = [3, 1, 2]; expect(ex.m04OrdenarNumeros(nums)).toEqual([1, 2, 3]); expect(nums).toEqual([3, 1, 2]); });
+  test("medio 05 - m05AgruparPorParidade: separa pares e impares", () => expect(ex.m05AgruparPorParidade([1, 2, 3, 4])).toEqual({ pares: [2, 4], impares: [1, 3] }));
+  test("medio 06 - m06ContarOcorrencias: conta itens repetidos", () => expect(ex.m06ContarOcorrencias(["a", "b", "a"])).toEqual({ a: 2, b: 1 }));
+  test("medio 07 - m07ProdutosComDesconto: aplica percentual e preserva nome", () => expect(ex.m07ProdutosComDesconto([{ nome: "x", preco: 100 }], 10)).toEqual([{ nome: "x", preco: 90 }]));
+  test("medio 08 - m08TotalCarrinho: soma preco * quantidade", () => expect(ex.m08TotalCarrinho([{ preco: 10, quantidade: 2 }, { preco: 5, quantidade: 3 }])).toBe(35));
+  test("medio 09 - m09BuscarUsuarioPorEmail: encontra usuario", () => expect(ex.m09BuscarUsuarioPorEmail([{ email: "a@x.com" }], "a@x.com")).toEqual({ email: "a@x.com" }));
+  test("medio 10 - m10UsuariosAtivos: filtra ativos", () => expect(ex.m10UsuariosAtivos([{ id: 1, ativo: true }, { id: 2, ativo: false }])).toEqual([{ id: 1, ativo: true }]));
+  test("medio 11 - m11TodosMaioresDeIdade: every idade >= 18", () => expect(ex.m11TodosMaioresDeIdade([{ idade: 18 }, { idade: 20 }])).toBe(true));
+  test("medio 12 - m12AlgumProdutoCaro: some preco acima do limite", () => expect(ex.m12AlgumProdutoCaro([{ preco: 20 }, { preco: 200 }], 100)).toBe(true));
+  test("medio 13 - m13IndexarPorId: cria objeto por id", () => expect(ex.m13IndexarPorId([{ id: "a", nome: "Ana" }])).toEqual({ a: { id: "a", nome: "Ana" } }));
+  test("medio 14 - m14MesclarObjetos: merge com segundo sobrescrevendo", () => expect(ex.m14MesclarObjetos({ a: 1, b: 2 }, { b: 3 })).toEqual({ a: 1, b: 3 }));
+  test("medio 15 - m15SelecionarCampos: retorna apenas chaves pedidas", () => expect(ex.m15SelecionarCampos({ a: 1, b: 2, c: 3 }, ["a", "c"])).toEqual({ a: 1, c: 3 }));
+  test("medio 16 - m16OmitirCampos: remove chaves pedidas", () => expect(ex.m16OmitirCampos({ a: 1, b: 2, c: 3 }, ["b"])).toEqual({ a: 1, c: 3 }));
+  test("medio 17 - m17AchatarUmaCamada: flat de uma camada", () => expect(ex.m17AchatarUmaCamada([1, [2, 3], [4]])).toEqual([1, 2, 3, 4]));
+  test("medio 18 - m18Intersecao: itens comuns unicos", () => expect(ex.m18Intersecao([1, 2, 2, 3], [2, 3, 4])).toEqual([2, 3]));
+  test("medio 19 - m19Diferenca: itens do primeiro que nao estao no segundo", () => expect(ex.m19Diferenca([1, 2, 3], [2])).toEqual([1, 3]));
+  test("medio 20 - m20FrequenciaDeLetras: conta letras ignorando espacos e caixa", () => expect(ex.m20FrequenciaDeLetras("A asa")).toEqual({ a: 3, s: 1 }));
+  test("medio 21 - m21Palindromo: ignora acentos, caixa e pontuacao", () => expect(ex.m21Palindromo("A grama e amarga")).toBe(true));
+  test("medio 22 - m22Slugify: cria slug sem acentos", () => expect(ex.m22Slugify("Olá Mundo JS!")).toBe("ola-mundo-js"));
+  test("medio 23 - m23DiasEntreDatas: diferenca em dias inteiros", () => expect(ex.m23DiasEntreDatas("2026-08-01", "2026-08-05")).toBe(4));
+  test("medio 24 - m24AdicionarDias: retorna Date adicionando dias", () => expect(ex.m24AdicionarDias(new Date("2026-08-05T00:00:00Z"), 2).toISOString()).toBe("2026-08-07T00:00:00.000Z"));
+  test("medio 25 - m25AgruparPorMes: agrupa itens por YYYY-MM", () => expect(ex.m25AgruparPorMes([{ data: "2026-08-01", valor: 1 }, { data: "2026-09-01", valor: 2 }])).toEqual({ "2026-08": [{ data: "2026-08-01", valor: 1 }], "2026-09": [{ data: "2026-09-01", valor: 2 }] }));
+  test("medio 26 - m26TransporMatriz: troca linhas por colunas", () => expect(ex.m26TransporMatriz([[1, 2], [3, 4], [5, 6]])).toEqual([[1, 3, 5], [2, 4, 6]]));
+  test("medio 27 - m27RotacionarArray: rotaciona para direita n vezes", () => expect(ex.m27RotacionarArray([1, 2, 3, 4], 2)).toEqual([3, 4, 1, 2]));
+  test("medio 28 - m28CompactarBooleanos: retorna indices verdadeiros", () => expect(ex.m28CompactarBooleanos([true, false, true])).toEqual([0, 2]));
+  test("medio 29 - m29SomarPorCategoria: soma valores por categoria", () => expect(ex.m29SomarPorCategoria([{ categoria: "a", valor: 2 }, { categoria: "a", valor: 3 }])).toEqual({ a: 5 }));
+  test("medio 30 - m30ValidarSenha: minimo 8, maiuscula, minuscula, numero e simbolo", () => expect(ex.m30ValidarSenha("Abcdef1!")).toBe(true));
+  test("medio 31 - m31ChunkArray: divide array em blocos", () => expect(ex.m31ChunkArray([1, 2, 3, 4, 5], 2)).toEqual([[1, 2], [3, 4], [5]]));
+  test("medio 32 - m32ZipArrays: combina pares por indice", () => expect(ex.m32ZipArrays(["a", "b"], [1, 2, 3])).toEqual([["a", 1], ["b", 2]]));
+  test("medio 33 - m33RemoverFalsy: remove valores falsy", () => expect(ex.m33RemoverFalsy([0, 1, false, "ok", "", null])).toEqual([1, "ok"]));
+});
